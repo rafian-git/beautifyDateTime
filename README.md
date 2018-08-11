@@ -18,7 +18,7 @@ returns >> 6 February at 2:21 pm
 Demonstration-------------------------
 var beautifyDateTime = require('./beautifyDateTime');
 
-var anyDate = "2011-02-06 14:21:00.014";
+var anyDate = new Date("2011-02-06 14:21:00.014");
 var outputDate = beautifyDateTime(anyDate);
 
 console.log(outputDate);
