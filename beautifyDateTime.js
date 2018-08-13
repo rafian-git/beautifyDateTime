@@ -26,6 +26,8 @@ const beautifyDateTime = function(aDate){
       var nDate =  "A minute ago";
       else if (today.getMinutes() == '59' && day.getMinutes()== "0")
       var nDate =  "A minute ago";
+      else 
+      var nDate =  "Within the hour";
     }
     else if (today.getHours() == day.getHours()-1) {
       var nDate =  "An hour ago";
