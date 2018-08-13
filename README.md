@@ -13,7 +13,7 @@ takes input >> 2018-08-10 21:47:05.731 (a minute ago)
 returns >> A minute ago
 
 takes input >> 2018-08-10 21:47:02.731 (4 minutes ago)
-returns >> A minute ago
+returns >> 4 minutes ago
 
 takes input >> 2018-08-10 20:47:05.731 (an hour ago)
 returns >> An hour ago
