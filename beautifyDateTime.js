@@ -26,13 +26,30 @@ const beautifyDateTime = function(aDate){
       var nDate =  "A minute ago";
       else if (today.getMinutes() == '59' && day.getMinutes()== "0")
       var nDate =  "A minute ago";
+      else if (day.getMinutes() - today.getMinutes() >1){
+      var diff = day.getMinutes() - today.getMinutes();
+      var nDate =  diff+" minutes ago";
+      }
+      else if (today.getMinutes() >day.getMinutes()){
+      var diff = 60 - today.getMinutes();
+      diff += day.getMinutes();
+      var nDate =  diff+" minutes ago";
+      }
       else 
       var nDate =  "Within the hour";
+      
     }
     else if (today.getHours() == day.getHours()-1) {
-      var nDate =  "An hour ago";
+      if (day.getMinutes() > today.getMinutes()) {
+        var nDate =  "An hour ago";
+      }
     }
     else {
+      if (day.getHours() > today.getHours()) {
+        var diff = day.getHours() - today.getHours();
+        var nDate =  diff+" hours ago";
+      }
+      else
       var nDate =  "today at "+t   // for today
     }
     return nDate;
