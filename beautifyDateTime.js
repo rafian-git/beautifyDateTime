@@ -17,9 +17,22 @@ const beautifyDateTime = function(aDate){
   var day = new Date();
 //  console.log(dd + "/" + mm +"/"+yyyy+"  "+hours+":"+minutes+" "+ampm);
 
-// for today
   if(dd == day.getDate() && mm == day.getMonth()+1 && yyyy== day.getFullYear()){
-    var nDate =  "today at "+t;
+    if (today.getHours() == day.getHours() && today.getMinutes() == day.getMinutes() ) {
+      var nDate =  "Just now";
+    }
+    else if (today.getHours() == day.getHours()) {
+      if(today.getMinutes() == day.getMinutes()-1 )
+      var nDate =  "A minute ago";
+      else if (today.getMinutes() == '59' && day.getMinutes()== "0")
+      var nDate =  "A minute ago";
+    }
+    else if (today.getHours() == day.getHours()-1) {
+      var nDate =  "An hour ago";
+    }
+    else {
+      var nDate =  "today at "+t   // for today
+    }
     return nDate;
   }
 // for yesterday
@@ -48,7 +61,6 @@ return nDate;
   }
 
 }
-
 
 
 module.exports =  {
